@@ -106,12 +106,18 @@ public class Scrabble {
 			String input = in.readString();
 			//// Replace the following break statement with code
 			//// that completes the hand playing loop
+			if (input.equals(".")) {
+				System.out.println("End of hand. Total score: " + score + " points");
+				return; // Exit
+			}
+			if (!isWordInDictionary(input)) {
+				System.out.println("Invalid word. Try again.\n");
+				continue; 
+			}
 			if(isWordInDictionary(input)){
 				score += wordScore(input);
 				System.out.println(input + " earned " + wordScore(input) + " point. Score: " + score + "\n");
 				hand = MyString.remove(hand, input);
-			} else{
-				System.out.println("Invalid word. Try again");
 			}
 		}
 		if (hand.length() == 0) {
