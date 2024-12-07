@@ -44,8 +44,11 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
+        if(str1 == ""){
+            return true;
+        }
         for(int i = 0; i < str1.length(); i++){
-            if(countChar(str2, str1.charAt(i)) == 0){
+            if(countChar(str2, str1.charAt(i)) != 1){
                 return false;
             }
         }
