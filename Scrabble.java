@@ -113,11 +113,11 @@ public class Scrabble {
 				return; //exit
 			}
 			if (!isWordInDictionary(input)) {
-				System.out.println("Invalid word. Try again.\n");
+				System.out.println("Invalid word. Try again.");
 				continue; 
 			}
 			if(!MyString.subsetOf(input, hand)){
-				System.out.println("The word cannot be formed from your hand. Try again.\n");
+				System.out.println("The word cannot be formed from your hand. Try again.");
 				continue;
 			}
 
