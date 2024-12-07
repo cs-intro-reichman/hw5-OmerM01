@@ -7,7 +7,7 @@ public class MyString {
         System.out.println(countChar(hello, 'h'));
         System.out.println(countChar(hello, 'l'));
         System.out.println(countChar(hello, 'z'));
-        System.out.println(subsetOf("c", "space"));
+        System.out.println(subsetOf("pass", "space"));
         System.out.println(spacedString(hello));
         System.out.println(randomStringOfLetters(3));
         System.out.println(remove("committee", "meet"));
@@ -48,7 +48,7 @@ public class MyString {
             return true;
         }
         for(int i = 0; i < str1.length(); i++){
-            if(countChar(str2, str1.charAt(i)) != 1){
+            if(countChar(str2, str1.charAt(i)) < countChar(str1, str1.charAt(i))){
                 return false;
             }
         }
