@@ -10,7 +10,7 @@ public class MyString {
         System.out.println(subsetOf("c", "space"));
         System.out.println(spacedString(hello));
         System.out.println(randomStringOfLetters(3));
-        System.out.println(remove("meet", "committee"));
+        System.out.println(remove("committee", "meet"));
         //// Put your other tests here.
     }
 
@@ -99,13 +99,13 @@ public class MyString {
      */
     public static String remove(String str1, String str2) {
        StringBuilder newStr = new StringBuilder();
-       String tempStr1 = str1;
-       for(int i = 0; i < str2.length(); i++){
-            if(tempStr1.indexOf(str2.charAt(i)) != -1){
-                int index = tempStr1.indexOf(str2.charAt(i));
-                tempStr1 = tempStr1.substring(0, index) + tempStr1.substring(index + 1);
+       String tempStr2 = str2;
+       for(int i = 0; i < str1.length(); i++){
+            if(tempStr2.indexOf(str1.charAt(i)) != -1){
+                int index = tempStr2.indexOf(str1.charAt(i));
+                tempStr2 = tempStr2.substring(0, index) + tempStr2.substring(index + 1);
             } else{
-                newStr.append(str2.charAt(i));
+                newStr.append(str1.charAt(i));
             }
        }
         return newStr.toString();
