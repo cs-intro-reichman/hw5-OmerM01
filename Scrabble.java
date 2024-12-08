@@ -143,10 +143,9 @@ public class Scrabble {
 			String input = in.readString();
 			if (input.equals("e")){
 				isStillPlay= false;
+			}else if(input.equals("n")){
+					playHand(createHand());
 				}
-			//// Replace the following break statement with code
-			//// that completes the game playing loop
-			break;
 		}
 	}
 
