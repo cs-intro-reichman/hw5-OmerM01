@@ -145,7 +145,7 @@ public class Scrabble {
 				isStillPlay= false;
 			}else if(input.equals("n")){
 					playHand(createHand());
-				}
+			}
 		}
 	}
 
