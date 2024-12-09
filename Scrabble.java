@@ -136,7 +136,7 @@ public class Scrabble {
 		// coming from the keyboard. Used for getting the user's inputs.  
 		In in = new In();
 		boolean isStillPlay = true;
-		while(true) {
+		while(isStillPlay) {
 			System.out.println("Enter n to deal a new hand, or e to end the game:");
 			// Gets the user's input, which is all the characters entered by 
 			// the user until the user enter the ENTER character.
