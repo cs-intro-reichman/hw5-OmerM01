@@ -99,7 +99,7 @@ public class Scrabble {
 		// Declares the variable in to refer to an object of type In, and initializes it to represent
 		// the stream of characters coming from the keyboard. Used for reading the user's inputs.   
 		In in = new In();
-		while (hand.length() > 0) {
+		while (n > 0) {
 			System.out.println("Current Hand: " + MyString.spacedString(hand));
 			System.out.println("Enter a word, or '.' to finish playing this hand:");
 			// Reads the next "token" from the keyboard. A token is defined as a string of 
@@ -108,16 +108,18 @@ public class Scrabble {
 			String input = in.readString();
 			//// Replace the following break statement with code
 			//// that completes the hand playing loop
-			if (isWordInDictionary(input)) {
+			if (isWordInDictionary(input)){
+				int currentScore = wordScore(input);
 				score+= wordScore(input);
+				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points" + "\n");
 				hand = MyString.remove(hand, input);
-				System.out.println(input+" earned "+wordScore(input)+" points. Score: "+score+" points"+"\n");
 			} else if (!isWordInDictionary(input) && !input.equals(".")){
 				System.out.println("Invalid word. Try again.");
 			}
 			if (input.equals(".")){
-				n=0;
-			}	
+				break;
+			}
+			n = hand.length();
 		}
 		if (hand.length() == 0) {
 	        System.out.println("Ran out of letters. Total score: " + score + " points");
